@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import './homeStyles.css'
-import { WebcamCapture} from '../Webcam/Webcam'
+import { WebcamCapture, GetAsFile} from '../Webcam/Webcam'
 
 
 const Home = () => {
@@ -15,6 +15,12 @@ const Home = () => {
         setEmail('');
     }
 
+    const logarArqImg = () => {
+        const img = document.getElementById("inputImagemBuscaAluno").files[0];
+        console.log(img)
+        console.log(GetAsFile())
+    }
+
 
     return (
         <div className="home-container">
@@ -25,6 +31,7 @@ const Home = () => {
                         <WebcamCapture/>
                         <input type="email" placeholder="Email" onChange={(e) => setEmail(e.target.value)} />
                         <input type="text" placeholder="Name" onChange={(e) => setName(e.target.value)} />
+                        <input type="file" id="inputImagemBuscaAluno"  onChange={(e) => logarArqImg()} />
                         <button type="submit" id="login-button" onClick={(e) => submitForm(e)}>Submit</button>
                     </form>
                 </div>
