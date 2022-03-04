@@ -1,18 +1,32 @@
 import React, { useState } from 'react';
 import Webcam from "react-webcam";
 
+//Salva a imagem como arquivo no escopo global
 var ImgFile;
+
+//Retorna a imagem como arquivo
 export const GetAsFile = () => {
     return ImgFile
 }
+
+//Retorna se a imagem esta preenchida ou nao
+export const IsFileSet = () => {
+    if (ImgFile != undefined) 
+        return true
+    else return false
+}
+
+//Cria o componente webcam
 const WebcamComponent = () => <Webcam />;
 
+//Define as configurações do componente de webcam
 const videoConstraints = {
     width: 220,
     height: 200,
     facingMode: "user"
 };
 
+//Define o método de captura de imagem no componente de webcam
 export const WebcamCapture = () => {
 
     const [image, setImage] = useState('');

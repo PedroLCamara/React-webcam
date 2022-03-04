@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import './homeStyles.css'
-import { WebcamCapture, GetAsFile} from '../Webcam/Webcam'
+import { WebcamCapture, GetAsFile, IsFileSet} from '../Webcam/Webcam'
 
 
 const Home = () => {
@@ -19,6 +19,7 @@ const Home = () => {
         const img = document.getElementById("inputImagemBuscaAluno").files[0];
         console.log(img)
         console.log(GetAsFile())
+        console.log(IsFileSet())
     }
 
 
